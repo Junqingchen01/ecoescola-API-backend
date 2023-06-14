@@ -1,7 +1,5 @@
-// const { config } = require("process");
 const db = require("../models");
 const Atividade = db.atividades;
-// const jwt = require("jsonwebtoken")
    
 exports.create = async (req, res) => {
   try {
