@@ -31,5 +31,5 @@ app.use('/atas',require('./routes/atas.routes.js'))
 app.get('*', function (req, res) {
 res.status(404).json({ message: 'WHAT??? no ecoescola ??' });
 })
-app.listen(port, host, () => console.log(`App listening at http://${host}:${port}/`));
+// app.listen(port, host, () => console.log(`App listening at http://${host}:${port}/`));
 app.listen(port, () => console.log(`App listening on PORT ${port}/`));
