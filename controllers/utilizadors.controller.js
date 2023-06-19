@@ -26,7 +26,7 @@ exports.findAll = async (req, res) => {
 
 exports.findOne = async (req, res) => {
   try {
-    const utilizador = await Utilizador.findById(req.params.utilizadorID);
+    const utilizador = await Utilizador.findOne({ username: req.body.username });
     if (utilizador === null) {
       return res.status(400).json({
         success: false,
@@ -45,6 +45,7 @@ exports.findOne = async (req, res) => {
   }
 };
 
+
 exports.update = async (req, res) => {
   if (
     !req.body ||
@@ -52,9 +53,8 @@ exports.update = async (req, res) => {
     !req.body.apelido ||
     !req.body.email ||
     !req.body.contacto ||
-    !req.body.password ||
-    !req.body.localizacao ||
-    !req.body.cargo
+    !req.body.localizacao
+  
   ) {
     return res
       .status(400)
@@ -91,6 +91,7 @@ exports.update = async (req, res) => {
     });
   }
 };
+
 
 exports.create = async (req, res) => {
   try {

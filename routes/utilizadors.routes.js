@@ -19,8 +19,10 @@ router.route('/')
 .post(utilizadorController.create);
 
 router.route('/:utilizadorID')
-    .get(utilizadorController.findOne)
     .put(utilizadorController.update);
+
+router.route('/findOne')
+    .post(utilizadorController.findOne)
 
 router.route('/login') 
     .post(utilizadorController.login)
